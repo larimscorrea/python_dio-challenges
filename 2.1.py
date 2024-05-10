@@ -1,7 +1,7 @@
 import sys
 
 try:
-    month = int(input("Digite o número do mês: "))
+    month = int(input())
     months_dict = {
         1: "January",
         2: "February",
@@ -16,7 +16,6 @@ try:
         11: "November",
         12: "December"
     }
-    print(months_dict.get(month))
     print(months_dict.get(month, "Mês inválido"))
 except ValueError:
     print("Por favor, insira um número válido.")
