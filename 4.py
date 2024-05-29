@@ -21,6 +21,10 @@ def analyze_sentiment():
     # Verifica se há mais palavras positivas do que negativas no comentário e se não há palavras neutras. Se essa condição for verdadeira, o comentário é considerado positivo.
     if count_positivo > count_negativo and count_neutro == 0:
         return "Positivo"
+    elif count_positivo < count_negativo and count_negativo == 0:
+        return "Negativo"
+    elif count_positivo > count_negativo and count_negativo != 0:
+        return "Esse sentimento pode ser neutro"
     # TODO: Complete a codição para determinar o sentimento com base na contagem de palavras
 
 # Saída esperada
