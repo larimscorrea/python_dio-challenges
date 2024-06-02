@@ -3,21 +3,20 @@ prompt_usuario = input()
 
 # Função para avaliar se o prompt está adequado
 def avaliar_prompt(prompt):
-    # Verifica se o prompt contém palavras-chave relevantes
-    palavras_chave = ["inteligência artificial", "sistemas de recomendação online", "exemplos de conversação", "explique conceitos", "dicas de tecnologia" ]
+    # Lista de palavras-chave relevantes
+    palavras_chave = ["inteligência artificial", "sistemas de recomendação online", "exemplos de conversação", "explique conceitos", "dicas de tecnologia"]
     
-    # TODO: Aplique a condição necessária para verificar se o prompt está ou não adequado de acordo com o enunciado
+    # Verifica se o prompt contém pelo menos uma das palavras-chave
+    for palavra in palavras_chave:
+        if palavra in prompt:
+            return "adequado"
+    return "não adequado"
 
 # Avaliar o prompt do usuário
 feedback_usuario = avaliar_prompt(prompt_usuario)
 
-if (avaliar_prompt == "Por favor, explique os conceitos de" + palavras_chave):
-    print('O prompt está adequado')
-elif (avaliar_prompt == "Crie" + palavras_chave):
-    print("O prompt está adequado")
-else(avaliar_prompt == "Qual é a coisa mais bonita do mundo?"):
+# Verificar o feedback e fornecer a resposta adequada
+if feedback_usuario == "adequado":
+    print("O prompt está adequado.")
+else:
     print("O prompt não está adequado. Inclua palavras-chave relevantes.")
-  
-
-# Exibir feedback
-print(feedback_usuario)
